@@ -1,0 +1,45 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+	<link rel="icon" type="image/x-icon" href="favicon.ico?v=2"  />
+    <title>Deepzoom Test</title>
+
+    <script src="openseadragon/openseadragon.min.js"></script>
+</head>
+
+<body>
+<div class="demoarea">
+    <div class="demoheading">
+        <h2>Thanks for 400 Followers!</h2>
+		<p>
+			See picture details by zooming the image
+		</p>
+		<p>
+			You can download individual images here: <a href="https://drive.google.com/drive/u/4/folders/1elkd69oawOOWXtuEicIQUIKeFin4H1d8">https://drive.google.com/drive/u/4/folders/1elkd69oawOOWXtuEicIQUIKeFin4H1d8</a>
+		</p>
+    </div>
+    <div id="contentDiv" clas3="openseadragon front-page"></div>
+</div>
+
+<script type="text/javascript">
+    // Example
+    var width = 11880;
+    var height = 6480;
+
+    window.viewer = OpenSeadragon({
+        id:              "contentDiv",
+        prefixUrl:       "/openseadragon/images/",
+        visibilityRatio: 0.6,
+        imageLoaderLimit: 16,
+        minPixelRatio: 0.25,
+        maxZoomPixelRatio: 1,
+
+		tileSources: [
+            {tileSource: '00.dzi', x: 0, y: 0, width: width},
+            {tileSource: '01.dzi', x: 0, y: height, width: width},
+            {tileSource: '10.dzi', x: width, y: 0, width: width},
+            {tileSource: '11.dzi', x: width, y: height, width: width}
+        ]
+    });
+</script>
+</html>
